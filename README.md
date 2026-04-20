@@ -1,49 +1,45 @@
 # ProPoisk Premium
 
-Полноценный MVP-проект для GitHub: поисковая система в стиле **ya.ru** с выдачей через **DuckDuckGo API**, mini-app модальными окнами, профилем, PIN-защитой, инкогнито, подпиской One Premium, Oink Stars и реферальной системой.
+Полноценное статическое приложение (HTML/CSS/JS) в стиле ya.ru:
+- поиск с интеграцией DuckDuckGo API,
+- вкладки Поиск / Картинки / Видео,
+- меню сервисов (расширяется через `services.json`),
+- mini-app модальные окна для сайтов/сервисов/видео,
+- профиль OINK ID (аватар, имя, история),
+- PIN-защита и режим инкогнито,
+- One Premium + Oink Stars,
+- реферальная система с одноразовой активацией,
+- docs: FAQ / Политика / Условия,
+- лендинг OINK ID,
+- готовность к деплою на Vercel и другие платформы статики.
 
 ## Стек
-- **HTML + CSS + JavaScript** (frontend)
-- **Node.js + Express** (backend API и хранение данных в JSON)
+- HTML
+- CSS
+- JavaScript (без backend)
+- localStorage для хранения данных профиля
 
-## Функции
-- Поиск / Картинки / Видео через DuckDuckGo (`Instant Answer`, `i.js`, `v.js`)
-- Встроенное открытие сайтов/видео/сервисов в модальном окне (как mini app)
-- Меню сервисов в стиле экосистемы (легко расширяется через `public/services.json`)
-- Профиль OINK ID с аватаром, именем и историей запросов
-- Режим инкогнито с PIN-подтверждением
-- Реферальная программа:
-  - создание кампании (компания/игра/приложение)
-  - генерация ссылки
-  - одноразовая активация ссылки
-  - награды и 14 дней One Premium
-- Oink Stars:
-  - ежедневный бонус +10 (по МСК)
-  - покупка One Premium на 30 дней за 15000
-- Документы: FAQ, Политика, Условия, лендинг OINK ID
-- Баннер cookies при первом запуске
-- Голосовой ввод (Web Speech API без ключей)
+## Запуск локально
+Откройте `index.html` в браузере
+или запустите локальный сервер:
 
-## Быстрый старт
 ```bash
-npm install
-npm start
+python3 -m http.server 8080
 ```
 
-Откройте: `http://localhost:3000`
-
 ## Структура
-- `server.js` — backend/API
-- `public/index.html` — интерфейс поиска
-- `public/styles.css` — стили
-- `public/app.js` — логика клиента
-- `public/services.json` — конфиг сервисов меню
-- `public/docs/*` — FAQ/Privacy/Terms
-- `public/oink-id.html` — лендинг OINK ID
-- `data/store.json` — простое хранилище
+- `index.html` — основной интерфейс
+- `styles.css` — стили
+- `app.js` — логика приложения
+- `services.json` — конфиг сервисов
+- `docs/faq.html` — FAQ
+- `docs/policy.html` — политика
+- `docs/terms.html` — условия
+- `oink-id.html` — лендинг OINK ID
 
 ## Добавление сервисов
-Отредактируйте `public/services.json`:
+Отредактируйте `services.json`:
+
 ```json
 {
   "id": "new-service",
@@ -54,18 +50,7 @@ npm start
 }
 ```
 
-
-## Деплой
-- **Vercel + custom domain `relaxdev.ru`**: см. `DEPLOY.md`
-- **Render**: поддерживается через `render.yaml`
-- **Railway/Heroku**: поддерживается через `Procfile`
-- **Любая платформа с Docker**: готов `Dockerfile`
-
-## Production notes
-Для продакшена рекомендуется:
-- перейти с JSON-хранилища на PostgreSQL/Redis,
-- хешировать PIN через bcrypt,
-- добавить JWT/сессии, rate-limit, captcha для анти-абуза,
-- использовать очередь и отдельные воркеры,
-- вынести метрики и логи (Grafana/ELK),
-- добавить интеграционные тесты.
+## Важно
+- В статическом режиме часть внешних сайтов может блокировать iframe (X-Frame-Options/CSP).
+- DuckDuckGo Instant Answer API отдает ограниченный формат результатов.
+- Данные аккаунта и PIN хранятся только локально в браузере пользователя.

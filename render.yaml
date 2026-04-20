@@ -1,10 +1,6 @@
 services:
   - type: web
-    name: propoisk-premium
-    runtime: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    envVars:
-      - key: NODE_VERSION
-        value: 20
+    name: propoisk-premium-static
+    env: static
+    buildCommand: ""
+    staticPublishPath: .

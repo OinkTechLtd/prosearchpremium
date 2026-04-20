@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mail",
+    "title": "Почта",
+    "url": "https://mail.yandex.ru",
+    "premium": false,
+    "description": "Почтовый сервис"
+  },
+  {
+    "id": "maps",
+    "title": "Карты",
+    "url": "https://yandex.ru/maps",
+    "premium": false,
+    "description": "Карты и навигация"
+  },
+  {
+    "id": "music-plus",
+    "title": "Music+",
+    "url": "https://music.yandex.ru",
+    "premium": true,
+    "description": "Платный музыкальный сервис"
+  },
+  {
+    "id": "games-plus",
+    "title": "Games+",
+    "url": "https://yandex.ru/games",
+    "premium": true,
+    "description": "Премиум игровые сервисы"
+  }
+]

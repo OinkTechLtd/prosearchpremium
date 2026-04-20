@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProPoisk Premium</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="pinOverlay" class="overlay hidden">
+    <div class="card auth-card">
+      <h2>OINK ID PIN</h2>
+      <p id="pinText">Создайте PIN-код для защиты аккаунта.</p>
+      <input id="pinInput" type="password" maxlength="8" placeholder="PIN" />
+      <button id="pinActionBtn" class="btn primary">Подтвердить</button>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">ProPoisk <span>Premium</span></div>
+    <nav id="serviceMenu" class="service-menu"></nav>
+    <div class="actions">
+      <button id="incognitoBtn" class="btn ghost">Инкогнито: OFF</button>
+      <button id="profileBtn" class="btn">Профиль</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <div class="tabs">
+        <button class="tab active" data-tab="web">Поиск</button>
+        <button class="tab" data-tab="images">Картинки</button>
+        <button class="tab" data-tab="video">Видео</button>
+      </div>
+      <div class="input-row">
+        <input id="searchInput" type="text" placeholder="Найдётся всё: введите запрос" />
+        <button id="voiceBtn" class="btn">🎤</button>
+        <button id="searchBtn" class="btn primary">Найти</button>
+      </div>
+      <p class="hint">Стиль ya.ru + выдача на базе DuckDuckGo API.</p>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+
+  <aside id="profilePanel" class="profile-panel hidden">
+    <div class="card">
+      <h3>Профиль OINK ID</h3>
+      <label class="file-upload">Фото профиля
+        <input id="avatarInput" type="file" accept="image/*" />
+      </label>
+      <img id="avatarPreview" class="avatar" alt="avatar" />
+      <input id="nameInput" type="text" placeholder="Ваше имя" />
+      <button id="saveProfileBtn" class="btn primary">Сохранить</button>
+
+      <hr />
+      <div class="stat">OINK ID: <b id="oinkId"></b></div>
+      <div class="stat">Баланс Oink Stars: <b id="starsValue">0</b></div>
+      <div class="stat">One Premium до: <b id="premiumUntil">Нет</b></div>
+      <button id="dailyRewardBtn" class="btn">Забрать +10</button>
+      <button id="buySubBtn" class="btn">Купить 30 дней за 15000</button>
+
+      <hr />
+      <h4>Реферальная кампания</h4>
+      <input id="campTitle" type="text" placeholder="Название (компания/игра/приложение)" />
+      <input id="campImage" type="url" placeholder="URL фото" />
+      <input id="campLink" type="url" placeholder="Ссылка на проект" />
+      <button id="createRefBtn" class="btn">Создать реф-ссылку</button>
+      <textarea id="refOut" rows="2" readonly placeholder="Ссылка появится здесь"></textarea>
+
+      <hr />
+      <h4>История запросов</h4>
+      <ul id="historyList" class="history-list"></ul>
+    </div>
+  </aside>
+
+  <div id="appModal" class="modal hidden">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <strong id="modalTitle">Mini App</strong>
+        <button id="modalClose" class="btn">Закрыть</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="cookieBanner" class="cookie-banner hidden">
+    Мы используем cookies и локальные данные для персонализации сервиса.
+    <button id="cookieAccept" class="btn primary">Понятно</button>
+  </div>
+
+  <footer>
+    <a href="docs/faq.html" target="_blank">FAQ</a>
+    <a href="docs/policy.html" target="_blank">Политика</a>
+    <a href="docs/terms.html" target="_blank">Условия</a>
+    <a href="oink-id.html" target="_blank">OINK ID</a>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
