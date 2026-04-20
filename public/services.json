@@ -1,0 +1,30 @@
+[
+  {
+    "id": "music",
+    "title": "Музыка",
+    "url": "https://music.yandex.ru/",
+    "premium": true,
+    "description": "Музыкальный сервис в окне mini-app"
+  },
+  {
+    "id": "maps",
+    "title": "Карты",
+    "url": "https://yandex.ru/maps/",
+    "premium": false,
+    "description": "Карты и навигация"
+  },
+  {
+    "id": "translate",
+    "title": "Переводчик",
+    "url": "https://translate.yandex.ru/",
+    "premium": false,
+    "description": "Переводы текстов"
+  },
+  {
+    "id": "market",
+    "title": "Маркет",
+    "url": "https://market.yandex.ru/",
+    "premium": true,
+    "description": "Премиум партнерский сервис"
+  }
+]

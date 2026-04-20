@@ -1,0 +1,24 @@
+{
+  "name": "propoisk-premium",
+  "version": "1.0.0",
+  "description": "ProPoisk Premium — поисковая система в стиле ya.ru на API DuckDuckGo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "search",
+    "duckduckgo",
+    "ya-style",
+    "premium"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "nanoid": "^5.1.5"
+  }
+}
